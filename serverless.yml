@@ -6,6 +6,8 @@ service: ddns-lambda
 provider:
   name: aws
   runtime: python3.8
+  memorySize: 512
+  timeout: 10
   profile: ddns-lambda
   stage: dev
   region: us-east-1
@@ -40,15 +42,20 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  ddns_lambda:
+    handler: handler.ddns_lambda
     events:
       - http:
-          path: nic/update
           method: get
+          path: nic/update
+          integration: lambda-proxy
+      - http:
+          method: post
+          path: nic/update
+          integration: lambda-proxy
     environment:
-      USERNAME: ${env:USERNAME}
-      PASSWORD: ${env:PASSWORD}
+      DDNS_USERNAME: ${env:DDNS_USERNAME}
+      DDNS_PASSWORD: ${env:DDNS_PASSWORD}
 
 # you can add CloudFormation resource templates here
 #resources:
