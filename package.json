@@ -1,0 +1,9 @@
+{
+  "name": "ddns-lambda",
+  "description": "",
+  "version": "0.1.0",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless-api-gateway-throttling": "^1.1.0"
+  }
+}
