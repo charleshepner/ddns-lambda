@@ -8,6 +8,7 @@ provider:
   runtime: python3.8
   memorySize: 512
   timeout: 10
+  endpointType: EDGE
   profile: ddns-lambda
   stage: dev
   region: us-east-1
@@ -19,10 +20,26 @@ functions:
           method: get
           path: nic/update
           integration: lambda-proxy
+          request:
+            parameters:
+              headers:
+                authorization: true
+              querystrings:
+                hostname: true
+                myip: false
+                offline: false
       - http:
           method: post
           path: nic/update
           integration: lambda-proxy
+          request:
+            parameters:
+              headers:
+                Authorization: true
+              querystrings:
+                hostname: true
+                myip: false
+                offline: false
     environment:
       DDNS_USERNAME: ${env:DDNS_USERNAME}
       DDNS_PASSWORD: ${env:DDNS_PASSWORD}
@@ -31,5 +48,5 @@ plugins:
 custom:
   apiGatewayThrottling:
     maxRequestsPerSecond: 2
-    maxConcurrentRequests: 2
+    maxConcurrentRequests: 1
 

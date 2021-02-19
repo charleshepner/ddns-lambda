@@ -1,0 +1,109 @@
+{
+    "resource": "/nic/update",
+    "path": "/nic/update",
+    "httpMethod": "GET",
+    "headers": {
+        "Accept": "*/*",
+        "Authorization": "Basic YWRtaW46cGFzc3dvcmQK",
+        "CloudFront-Forwarded-Proto": "https",
+        "CloudFront-Is-Desktop-Viewer": "true",
+        "CloudFront-Is-Mobile-Viewer": "false",
+        "CloudFront-Is-SmartTV-Viewer": "false",
+        "CloudFront-Is-Tablet-Viewer": "false",
+        "CloudFront-Viewer-Country": "US",
+        "Host": "7s04abhk0e.execute-api.us-east-1.amazonaws.com",
+        "User-Agent": "curl/7.64.1",
+        "Via": "2.0 b613a3aa337386f7b6ef8d2aac02e3d7.cloudfront.net (CloudFront)",
+        "X-Amz-Cf-Id": "Wx6bGYLNFlR4dXi7939etDsXS5npdnr7HB-tezQvam8Ci_qI9Xpc2Q==",
+        "X-Amzn-Trace-Id": "Root=1-602eb297-56af6261293851bc2abb9a5e",
+        "X-Forwarded-For": "75.115.88.113, 130.176.91.132",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https"
+    },
+    "multiValueHeaders": {
+        "Accept": [
+            "*/*"
+        ],
+        "Authorization": [
+            "Basic YWRtaW46cGFzc3dvcmQK"
+        ],
+        "CloudFront-Forwarded-Proto": [
+            "https"
+        ],
+        "CloudFront-Is-Desktop-Viewer": [
+            "true"
+        ],
+        "CloudFront-Is-Mobile-Viewer": [
+            "false"
+        ],
+        "CloudFront-Is-SmartTV-Viewer": [
+            "false"
+        ],
+        "CloudFront-Is-Tablet-Viewer": [
+            "false"
+        ],
+        "CloudFront-Viewer-Country": [
+            "US"
+        ],
+        "Host": [
+            "7s04abhk0e.execute-api.us-east-1.amazonaws.com"
+        ],
+        "User-Agent": [
+            "curl/7.64.1"
+        ],
+        "Via": [
+            "2.0 b613a3aa337386f7b6ef8d2aac02e3d7.cloudfront.net (CloudFront)"
+        ],
+        "X-Amz-Cf-Id": [
+            "Wx6bGYLNFlR4dXi7939etDsXS5npdnr7HB-tezQvam8Ci_qI9Xpc2Q=="
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-602eb297-56af6261293851bc2abb9a5e"
+        ],
+        "X-Forwarded-For": [
+            "75.115.88.113, 130.176.91.132"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ]
+    },
+    "queryStringParameters": "",
+    "multiValueQueryStringParameters": "",
+    "pathParameters": "",
+    "stageVariables": "",
+    "requestContext": {
+        "resourceId": "3lfbky",
+        "resourcePath": "/nic/update",
+        "httpMethod": "GET",
+        "extendedRequestId": "a9DXnEaIoAMFqVA=",
+        "requestTime": "18/Feb/2021:18:31:51 +0000",
+        "path": "/dev/nic/update",
+        "accountId": "911633923860",
+        "protocol": "HTTP/1.1",
+        "stage": "dev",
+        "domainPrefix": "7s04abhk0e",
+        "requestTimeEpoch": 1613673111018,
+        "requestId": "a04fb39d-0d52-403c-b06d-7dce3ba360ca",
+        "identity": {
+            "cognitoIdentityPoolId": "",
+            "accountId": "",
+            "cognitoIdentityId": "",
+            "caller": "",
+            "sourceIp": "75.115.88.113",
+            "principalOrgId": "",
+            "accessKey": "",
+            "cognitoAuthenticationType": "",
+            "cognitoAuthenticationProvider": "",
+            "userArn": "",
+            "userAgent": "curl/7.64.1",
+            "user": ""
+        },
+        "domainName": "7s04abhk0e.execute-api.us-east-1.amazonaws.com",
+        "apiId": "7s04abhk0e"
+    },
+    "body": "",
+    "isBase64Encoded": false
+}
