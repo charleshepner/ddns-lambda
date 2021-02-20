@@ -5,7 +5,7 @@ import logging
 import os
 
 logger = logging.getLogger()
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 
 ddns_username = os.environ.get("DDNS_USERNAME")
 ddns_password = os.environ.get("DDNS_PASSWORD")
@@ -13,25 +13,38 @@ ddns_password = os.environ.get("DDNS_PASSWORD")
 def ddns_lambda(event, context):
     logger.debug(event)
 
+    try:
+        response = process_request(event)
+    except Exception as e:
+        logger.error(repr(e))
+        response = format_response(500, "911")
+
+    return response
+
+
+def process_request(event):
     allow_access = False
     headers = event.get('headers')
+    querystrings = event.get("queryStringParameters")
+
     if headers:
+        useragent = headers.get("User-Agent")
+        if not useragent or useragent == "Amazon CloudFront": 
+            return format_response(400, "badagent")
+
         auth = headers.get("Authorization")
         if auth:
             allow_access = check_credentials(auth)
 
     if not allow_access:
-        response = format_response(401, "Unauthorized")
+        return format_response(403, "badauth")
 
-    if allow_access:
-        querystrings = event.get("queryStringParameters")
-        if querystrings:
-            logger.info(querystrings.get("hostname"))
-            logger.info(querystrings.get("myip"))
-
-        response = format_response(200, "Congrats! You're authorized.")
-
-    return response
+    if allow_access and querystrings:
+        logger.info(querystrings.get("hostname"))
+        logger.info(querystrings.get("myip"))
+        return format_response(200, "good")
+    else:
+        return format_response(500, "911")
 
 
 def check_credentials(authorization_header):
@@ -54,6 +67,9 @@ def check_credentials(authorization_header):
 def format_response(status, message):
     return {
         "statusCode": status,
-        "body": json.dumps({"status": status, "message": message })
+        "headers": {
+            "Content-Type": "text/plain"
+        },
+        "body": message
     }
 
