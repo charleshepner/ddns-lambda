@@ -2,7 +2,6 @@ useDotenv: true
 service: ddns-lambda
 provider:
   name: aws
-  description: A function to provide dynamic DNS updates to Route53 using the googledomains protocol
   runtime: python3.8
   memorySize: 512
   timeout: 10
@@ -11,6 +10,7 @@ provider:
   stage: dev
   region: us-east-1
   versionFunctions: false
+  logRetentionInDays: 14
   iam:
     role:
       statements:
@@ -21,6 +21,7 @@ provider:
 functions:
   ddns_lambda:
     handler: handler.ddns_lambda
+    description: A function to provide dynamic DNS updates to Route53 using the googledomains protocol
     events:
       - http:
           method: get
