@@ -4,7 +4,7 @@
     "httpMethod": "GET",
     "headers": {
         "Accept": "*/*",
-        "Authorization": "Basic YWRtaW46cGFzc3dvcmQK",
+        "Authorization": "Basic Y2hlcG5lcjpNJ2dNa2huSTJ4Sn5VNlRHcnRta25QSEg=",
         "CloudFront-Forwarded-Proto": "https",
         "CloudFront-Is-Desktop-Viewer": "true",
         "CloudFront-Is-Mobile-Viewer": "false",
@@ -25,7 +25,7 @@
             "*/*"
         ],
         "Authorization": [
-            "Basic YWRtaW46cGFzc3dvcmQK"
+            "Basic Y2hlcG5lcjpNJ2dNa2huSTJ4Sn5VNlRHcnRta25QSEg="
         ],
         "CloudFront-Forwarded-Proto": [
             "https"

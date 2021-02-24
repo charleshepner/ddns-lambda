@@ -9,6 +9,8 @@ logger.setLevel(logging.DEBUG)
 
 ddns_username = os.environ.get("DDNS_USERNAME")
 ddns_password = os.environ.get("DDNS_PASSWORD")
+hostname = os.environ.get("HOSTNAME")
+
 
 def ddns_lambda(event, context):
     logger.debug(event)
@@ -42,6 +44,10 @@ def process_request(event):
     if allow_access and querystrings:
         logger.info(querystrings.get("hostname"))
         logger.info(querystrings.get("myip"))
+
+        if querystrings.get("hostname") != hostname:
+            return format_response(400, "nohost")
+
         return format_response(200, "good")
     else:
         return format_response(500, "911")

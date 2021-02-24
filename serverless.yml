@@ -22,7 +22,7 @@ provider:
         - Effect: 'Allow'
           Action:
             - 'route53:GetChange'
-          Resource: 'arn:aws:route53:::change/'
+          Resource: 'arn:aws:route53:::change/*'
 functions:
   ddns_lambda:
     handler: handler.ddns_lambda
@@ -55,6 +55,7 @@ functions:
     environment:
       DDNS_USERNAME: ${env:DDNS_USERNAME}
       DDNS_PASSWORD: ${env:DDNS_PASSWORD}
+      HOSTNAME: ${env:HOSTNAME}
     tags:
       Name: dynamic-dns-google-domains-protocol
       Owner: charleshepner@gmail.com

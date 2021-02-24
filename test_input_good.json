@@ -1,0 +1,87 @@
+{
+    "resource": "/nic/update",
+    "path": "/nic/update",
+    "httpMethod": "GET",
+    "headers": {
+        "accept": "*/*",
+        "Authorization": "Basic Y2hlcG5lcjpNJ2dNa2huSTJ4Sn5VNlRHcnRta25QSEg=",
+        "Host": "7s04abhk0e.execute-api.us-east-1.amazonaws.com",
+        "User-Agent": "curl/7.64.1",
+        "X-Amzn-Trace-Id": "Root=1-6035cfee-00a91e0e40033ff747b8e2e5",
+        "X-Forwarded-For": "74.140.51.247",
+        "X-Forwarded-Port": "443",
+        "X-Forwarded-Proto": "https"
+    },
+    "multiValueHeaders": {
+        "accept": [
+            "*/*"
+        ],
+        "Authorization": [
+            "Basic Y2hlcG5lcjpNJ2dNa2huSTJ4Sn5VNlRHcnRta25QSEg="
+        ],
+        "Host": [
+            "7s04abhk0e.execute-api.us-east-1.amazonaws.com"
+        ],
+        "User-Agent": [
+            "curl/7.64.1"
+        ],
+        "X-Amzn-Trace-Id": [
+            "Root=1-6035cfee-00a91e0e40033ff747b8e2e5"
+        ],
+        "X-Forwarded-For": [
+            "74.140.51.247"
+        ],
+        "X-Forwarded-Port": [
+            "443"
+        ],
+        "X-Forwarded-Proto": [
+            "https"
+        ]
+    },
+    "queryStringParameters": {
+        "hostname": "test.charleshepner.com",
+        "myip": "1.1.1.1"
+    },
+    "multiValueQueryStringParameters": {
+        "hostname": [
+            "test.charleshepner.com"
+        ],
+        "myip": [
+            "1.1.1.1"
+        ]
+    },
+    "pathParameters": "",
+    "stageVariables": "",
+    "requestContext": {
+        "resourceId": "3lfbky",
+        "resourcePath": "/nic/update",
+        "httpMethod": "GET",
+        "extendedRequestId": "bO1tREZ2IAMFTsA=",
+        "requestTime": "24/Feb/2021:04:02:54 +0000",
+        "path": "/dev/nic/update",
+        "accountId": "911633923860",
+        "protocol": "HTTP/1.1",
+        "stage": "dev",
+        "domainPrefix": "7s04abhk0e",
+        "requestTimeEpoch": 1614139374474,
+        "requestId": "c76f448a-b093-4921-a1ba-bf2712b53632",
+        "identity": {
+            "cognitoIdentityPoolId": "",
+            "accountId": "",
+            "cognitoIdentityId": "",
+            "caller": "",
+            "sourceIp": "74.140.51.247",
+            "principalOrgId": "",
+            "accessKey": "",
+            "cognitoAuthenticationType": "",
+            "cognitoAuthenticationProvider": "",
+            "userArn": "",
+            "userAgent": "curl/7.64.1",
+            "user": ""
+        },
+        "domainName": "7s04abhk0e.execute-api.us-east-1.amazonaws.com",
+        "apiId": "7s04abhk0e"
+    },
+    "body": "",
+    "isBase64Encoded": false
+}
