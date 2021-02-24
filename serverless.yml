@@ -1,17 +1,23 @@
 useDotenv: true
-disabledDeprecations:
-  - AWS_API_GATEWAY_NAME_STARTING_WITH_SERVICE
-  - LAMBDA_HASHING_VERSION_V2
 service: ddns-lambda
 provider:
   name: aws
+  description: A function to provide dynamic DNS updates to Route53 using the googledomains protocol
   runtime: python3.8
   memorySize: 512
   timeout: 10
-  endpointType: EDGE
+  endpointType: REGIONAL
   profile: ddns-lambda
   stage: dev
   region: us-east-1
+  versionFunctions: false
+  iam:
+    role:
+      statements:
+        - Effect: 'Allow'
+          Action:
+            - 'route53:ListHostedZones'
+          Resource: '*'
 functions:
   ddns_lambda:
     handler: handler.ddns_lambda
@@ -43,10 +49,23 @@ functions:
     environment:
       DDNS_USERNAME: ${env:DDNS_USERNAME}
       DDNS_PASSWORD: ${env:DDNS_PASSWORD}
+    tags:
+      Name: dynamic-dns-google-domains-protocol
+      Owner: charleshepner@gmail.com
+      Environment: ${self:provider.stage}
 plugins:
   - serverless-api-gateway-throttling
 custom:
   apiGatewayThrottling:
     maxRequestsPerSecond: 2
     maxConcurrentRequests: 1
+package:
+  exclude:
+    - README.md
+    - package-lock.json
+    - package.json
+    - test_*.json
+disabledDeprecations:
+  - AWS_API_GATEWAY_NAME_STARTING_WITH_SERVICE
+  - LAMBDA_HASHING_VERSION_V2
 
